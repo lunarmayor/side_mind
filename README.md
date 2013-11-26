@@ -1,4 +1,4 @@
-== Side Mind
+#Side Mind
 
 [still in progress]
 

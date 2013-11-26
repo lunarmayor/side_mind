@@ -59,6 +59,10 @@ gem 'unicorn'
 
 gem "rails-backbone"
 
+gem 'capybara'
+gem 'cucumber-rails', :require=>false
+gem 'factory_girl_rails'
+
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development
 

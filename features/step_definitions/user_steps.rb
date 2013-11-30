@@ -1,5 +1,8 @@
 ### UTILITY METHODS ###
 
+include Warden::Test::Helpers
+Warden.test_mode!
+
 def create_visitor
   @visitor ||= { name: "Testy McUserton", phone: "9783871813", email: "example@example.com",
     password: "changeme", password_confirmation: "changeme" }
@@ -13,7 +16,7 @@ def create_unconfirmed_user
   create_visitor
   delete_user
   sign_up
-  visit '/users/sign_out'
+  logout(:user)
 end
 
 def create_user
@@ -48,7 +51,7 @@ end
 
 ### GIVEN ###
 Given /^I am not logged in$/ do
-  visit '/users/sign_out'
+  logout(@user ||= User.where(:email => @visitor[:email]).first)
 end
 
 Given /^I am logged in$/ do
@@ -76,7 +79,7 @@ When /^I sign in with valid credentials$/ do
 end
 
 When /^I sign out$/ do
-  visit '/users/sign_out'
+  logout(@user ||= User.where(:email => @visitor[:email]).first)
 end
 
 When /^I sign up with valid user data$/ do
@@ -155,7 +158,7 @@ Then /^I see a successful sign in message$/ do
 end
 
 Then /^I should see a successful sign up message$/ do
-  page.should have_content "Welcome! You have signed up successfully."
+  page.should have_content @user.name
 end
 
 Then /^I should see an invalid email message$/ do
@@ -167,11 +170,11 @@ Then /^I should see a missing password message$/ do
 end
 
 Then /^I should see a missing password confirmation message$/ do
-  page.should have_content "Password doesn't match confirmation"
+  page.should have_content "Password confirmation doesn't match Password"
 end
 
 Then /^I should see a mismatched password message$/ do
-  page.should have_content "Password doesn't match confirmation"
+  page.should have_content "Password confirmation doesn't match Password"
 end
 
 Then /^I should see a signed out message$/ do

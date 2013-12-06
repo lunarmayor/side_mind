@@ -19,4 +19,6 @@
 //= require backbone_rails_sync
 //= require backbone_datalink
 //= require backbone/side_mind
+//= require hamlcoffee
+//= require socket.io.js
 //= require_tree .

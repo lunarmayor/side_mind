@@ -7,6 +7,8 @@ gem 'rails', '4.0.0'
 group :development do
   gem 'sqlite3'
 end
+gem 'twilio-ruby'
+
 
 gem 'anjlab-bootstrap-rails',  "~> 3.0.2.0", require: 'bootstrap-rails'
 # Use SCSS for stylesheets
@@ -16,13 +18,15 @@ group :production do
   gem 'pg'
   gem 'rails_12factor'
 end
+gem 'active_model_serializers'
 
 gem 'compass-rails', github: 'Compass/compass-rails'
 gem 'chosen-rails'
-
+gem 'redis'
 gem "paperclip"
 gem 'aws-sdk'
-
+gem 'haml_coffee_assets'
+gem 'execjs'
 gem 'rspec-rails'
 gem 'haml-rails'
 gem 'devise', :git => 'git://github.com/plataformatec/devise.git'
@@ -55,14 +59,16 @@ end
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
 # Use unicorn as the app server
-gem 'unicorn'
+gem 'thin'
 
 gem "rails-backbone"
+
 
 gem 'capybara'
 gem 'cucumber-rails', :require=>false
 gem 'database_cleaner'
 gem 'factory_girl_rails'
+
 
 # Use Capistrano for deployment
 # gem 'capistrano', group: :development

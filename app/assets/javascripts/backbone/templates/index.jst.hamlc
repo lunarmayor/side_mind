@@ -1,0 +1,29 @@
+%nav.navbar.navbar-default#navbar-show{role: "navigation", style: "background-color: #557B7C"}
+  %a.navbar-brand.logo{href: "#"}
+    Howard
+
+.group.show
+  .col-sm-3.side-container
+    #canvas.text-center
+    .text-center.name
+      = @user.name
+    %ul.nav  
+      %li.row
+        %a.nav-link.text-center.today{href: '#'}
+          Today
+      %li.row
+        %a.nav-link.text-center.week{href: '#'}
+          Lists
+      %li.row
+        %a.nav-link.text-center.shared{href: '#'}
+          Shared
+  .col-sm-7.main
+    .row
+      .col-sm-11.col-sm-offset-1
+        %h4.today
+          Today
+        .tasks
+  
+  .col-sm-2
+    #lists       
+

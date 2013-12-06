@@ -1,0 +1,5 @@
+.row
+  .col-sm-10
+    .col-xs-8{style: "background-color: #8BACA1"
+      %input.new-task-input{name: "task", style: "border:none !important"}
+    .col-xs-2

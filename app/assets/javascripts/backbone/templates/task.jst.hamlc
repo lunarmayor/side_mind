@@ -1,0 +1,21 @@
+.row
+  - if @task.done
+    .col-sm-10
+      .col-xs-8.task-greyscale{style: 'position: relative'}
+        .task-input{style: "display: none"}
+          %input.edit-task-input{value: @task.content, style: "border:none !important"}
+        .task-text
+          = @task.content
+        .edit.glyphicon.hidden.glyphicon-pencil{style: "color: grey"}
+        .delete.glyphicon.hidden.glyphicon-remove{style: "color: grey"}
+      .col-xs-2.task-toggle-greyscale
+  - else
+    .col-sm-10
+      .col-xs-8{style: 'position: relative'}
+        .task-input{style: "display: none"}
+          %input.edit-task-input{value: @task.content, style: "border:none !important"}
+        .task-text
+          = @task.content
+        .edit.glyphicon.hidden.glyphicon-pencil
+        .delete.glyphicon.hidden.glyphicon-remove
+      .col-xs-2 

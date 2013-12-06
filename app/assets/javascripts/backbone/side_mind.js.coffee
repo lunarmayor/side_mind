@@ -4,8 +4,12 @@
 #= require_tree ./views
 #= require_tree ./routers
 
-window.SideMind =
+window.Howard =
   Models: {}
   Collections: {}
   Routers: {}
   Views: {}
+  data: {}
+  initialize: (data) ->
+    this.data.mainRouter = new Howard.Routers.User()
+    Backbone.history.start()

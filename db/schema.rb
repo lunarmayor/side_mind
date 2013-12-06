@@ -11,7 +11,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20131129175407) do
+ActiveRecord::Schema.define(version: 20131205175924) do
+
+  create_table "basiclists", force: true do |t|
+    t.string   "name"
+    t.string   "type"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "list_assignments", force: true do |t|
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "sharedlist_id"
+  end
+
+  create_table "tasks", force: true do |t|
+    t.string   "content"
+    t.boolean  "done"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "user_id"
+    t.integer  "list_id"
+  end
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

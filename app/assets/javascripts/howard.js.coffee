@@ -1,7 +1,4 @@
-
-
-
-$(document).ready ->
+window.renderHoward = -> 
   stage = new Kinetic.Stage(
     container: 'canvas'
     width: 200
@@ -95,6 +92,7 @@ $(document).ready ->
     layer)
 
   anim.start();
+
       
 
      

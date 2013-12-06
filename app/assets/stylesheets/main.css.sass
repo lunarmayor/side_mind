@@ -3,18 +3,22 @@ $link-color: #1D3A41
 
 @import 'twitter/bootstrap'
 @import 'chosen'
+@import url(http://fonts.googleapis.com/css?family=Pathway+Gothic+One)
 
 
 
 
 //global styles
 
-html, body
+html, body, #howard, .howard
   background-color: #8BACA1
+  height: 100%
 
+.main
+  overflow: auto
 
 //signup
-h2
+h2, h3, h4, h6
   color: #1D3A41
   margin-top: 0.5em
   font-family: "pirulenregular"
@@ -52,5 +56,136 @@ input
 \:-ms-input-placeholder
   color: #eee !important
 
+
+div
+  
+
+//show
+.show
+  .nav
+    margin-top: 2.5em
+    .row
+      background-color: #557B7C
+      background-color: #8baca1
+      font-size: 0.8em
+      
+      a
+        padding: 2em
+        border-top: 1px solid #1D3A41
+        //border-bottom: 1px solid #1D3A41
+        &:hover
+          background-color: #8baca1 * 1.2
+
+.shared
+  border-bottom: 1px solid #1D3A41
+
+.tasks
+  margin-top: 2em
+  .row
+    height: 100%
+    margin-top: 1em
+    
+    .col-sm-10
+      height: 100%
+
+      .col-xs-8
+        .task-text
+          white-space: nowrap
+          overflow: hidden
+          text-overflow: ellipsis
+        font-family: 'Pathway Gothic One', sans-serif
+        max-height: 3.36em
+        color: #eee
+        background-color: #557B7C 
+        font-size: 1.3em
+        padding: 1em
+        magin-top: 1em
+      .task-greyscale
+        color: grey
+        background-color: #696969 !important
+      .col-xs-2
+        height: 4.37em
+        background-color: #1D3A41
+        border-bottom-right-radius: 5px
+        border-top-right-radius: 5px
+      .task-toggle-greyscale
+        background-color: #303030!important
+        .glyphicon-unchecked
+          color: #557B7C 
+          font-size: 4em
+
+
+.glyphicon-plus-sign
+  font-size: 1.8em
+  margin-top: 0.2em
+  color: #557B7C 
+
+#navbar-show
+  margin-bottom: 0 !important
+.name
+  color: #1D3A41 !important
+  font-family: "pirulenregular"
+  font-size: 0.8em
+
+.logo
+  color: #1D3A41 !important
+  font-family: "pirulenregular"
+  &:hover
+    color: #1D3A41 !important
+
+
+.nav-link
+  font-family: "pirulenregular"
+.show
+  height: 100%
+
+.main
+  height: 100%
+  background-color: #ECE6BA
+  //background-color: #365753
+  h4
+    margin-top: 2em
+
+.side-container
+  margin-top: 2em
+
+
+.taskWrapper
+  margin-bottom: 4em
+
+.edit
+  position: absolute
+  top: 0.25em
+  right: 0.2em
+  color: #1D3A41
+  pointer: cursor
+
+.edit-task-input
+  width: 100%
+
+.new-task-input
+  width: 100%
+
+.hidden
+  display: hidden
+
+.delete
+  position: absolute
+  top: 2.1em
+  right: 0.2em
+  color: #1D3A41
+
+.listWrapper
+  .row
+    padding-top: 1em
+    padding-bottom: 1em
+    font-family: 'Pathway Gothic One', sans-serif
+    border-bottom: 1px solid #1D3A41
+
+    &:hover
+      background-color: #8baca1 * 1.2
+  
+  .plus-list
+    font-size: 1.3em
 
 

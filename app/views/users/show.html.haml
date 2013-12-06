@@ -1,1 +1,6 @@
-= @user.name
+#howard
+- content_for :javascript do
+  - javascript_tag do
+    Howard.initialize(); 
+
+= yield :javascript
